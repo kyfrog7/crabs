@@ -54,4 +54,13 @@ Purpose of Output: to shift Captain to a new location
 Example call to function:
 >> T = getTranslation (dx,dy)
 
+Function: getRotation.m
+Inputs vectors, and matrices -> Outputs the rotation of Captain
+Purpose of getTranslation: to rotate captain on one set of coordinates to different directions
+Purpose of Inputs: a matrix vector that establsihes captain on a given corrdinate to rotate on
+Purpose of Output: to rotate captain in any direction on a set coordinate
+Example call to function:
+>>R = getRotation (thetaCapt)
+
+
 
