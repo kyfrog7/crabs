@@ -10,15 +10,33 @@
 % Initialize captain location, heading and size
 xCapt = 1000;
 yCapt = 500;
-thetaCapt = pi/2;
+thetaCapt = -pi/2;
 sizeCapt = 50;
 
-% Draw the captain and initialize graphics handles
-%*********************************************************
-% Put your call to drawCapt() here ..... You must give drawCapt its
-% input and output arguments.
+%initialize graphics handles by drawing the captain
+captainGraphics = drawCapt (xCapt,yCapt,thetaCapt,sizeCapt);
 
-captainGraphics = drawCapt (xCapt, yCapt, thetaCapt, sizeCapt)
-%*******************************************************
+%initial command
+cmd="null";
+while (cmd != "Q")
+ %read keyboard 
+ cmd = kbhit ();
+ 
+ if( cmd == "w" || cmd == "a" || cmd == "d")
+ 
+ %erase old captain
+ for i=1:length(captainGraphics)
+   set(captainGraphics(i), 'Visible','off');
+ endfor
+ 
+ %move captain 
+ [xCapt,yCapt,thetaCapt] = moveCapt(cmd,xCapt,yCapt,thetaCapt,mapWidth,mapHeight,sizeCapt);
+ 
+ %draw new captain
+ captainGraphics = drawCapt (xCapt,yCapt,thetaCapt,sizeCapt);
+endif
 
+endwhile 
+
+close all
 endfunction
