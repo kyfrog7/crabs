@@ -10,13 +10,13 @@ if (cmd == "w")
 xCapt = x + dStep*cos(theta);
 yCapt = y + dStep*sin(theta);
 
-if(isOnMap(xTemp,yTemp,width,height,size))
-xCapt=xTemp;
-yCapt=yTemp;
-else 
-xCapt=x;
-yCapt=y;
-endif
+%if(isOnMap(xTemp,yTemp,width,height,size))
+%xCapt=xTemp;
+%yCapt=yTemp;
+%else 
+%xCapt=x;
+%yCapt=y;
+%endif
 
 thetaCapt = theta;
 
