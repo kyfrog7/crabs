@@ -1,5 +1,9 @@
 function [xCapt,yCapt,thetaCapt] = moveCapt (cmd,x,y,theta,width,height,size)
 
+xCapt=x;
+yCapt=y;
+thetaCapt=theta;
+
 dTheta = pi/6;
 dStep = 50;
 
@@ -7,16 +11,16 @@ if (cmd == "w")
 
 %move forward
 
-xCapt = x + dStep*cos(theta);
-yCapt = y + dStep*sin(theta);
+xTemp = x + dStep*cos(theta);
+yTemp = y + dStep*sin(theta);
 
-%if(isOnMap(xTemp,yTemp,width,height,size))
-%xCapt=xTemp;
-%yCapt=yTemp;
-%else 
-%xCapt=x;
-%yCapt=y;
-%endif
+  if(isOnMap(xTemp,yTemp,width,height,size))
+    xCapt=xTemp;
+    yCapt=yTemp;
+  else 
+    xCapt=x;
+    yCapt=y;
+    endif
 
 thetaCapt = theta;
 
