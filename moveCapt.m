@@ -7,7 +7,7 @@ thetaCapt=theta;
 dTheta = pi/6;
 dStep = 50;
 
-if (cmd == "w")
+if (cmd == "W" || cmd == "w")
 
 %move forward
 
@@ -24,13 +24,13 @@ yTemp = y + dStep*sin(theta);
 
 thetaCapt = theta;
 
-elseif (cmd == "a")
+elseif (cmd == "A" || cmd == "a")
 %rotate left 
 xCapt = x;
 yCapt = y;
 thetaCapt = theta - dTheta;
 
-elseif (cmd == "d")
+elseif (cmd == "D" || cmd == "d")
 %turn right 
 xCapt = x;
 yCapt = y;

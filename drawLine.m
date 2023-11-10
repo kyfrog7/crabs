@@ -1,4 +1,4 @@
-function handle = drawLine (p, q, color)
+function handle = drawLine (p, q)
   
   % This function draws a line between two 2D points p and q in homogeneous coordinates.
 
@@ -9,7 +9,7 @@ function handle = drawLine (p, q, color)
   y = [p(2) ; q(2)];
 
   % use Octaves built in plot function to graph the line
-  handle = plot(x, y, color);
+  handle = plot(x, y);
 
   %set the line width in the current graph
   set(handle, "LineWidth", 3);

@@ -1,4 +1,5 @@
-function captGraphics = drawCapt (xCapt , yCapt , thetaCapt , sizeCapt)
+function [captGraphics,xNet,yNet] = drawCapt(xCapt,yCapt,thetaCapt,sizeCapt)
+
 % In the future, this function will draw the captain at the given
 % position (xCapt , yCapt) , with heading thetaCapt.
 % For now, it draws the captain at the (0, 0) with 0 heading.
@@ -39,19 +40,41 @@ pt13=capt( : , 13);
 pt14=capt( : , 14);
 pt15=capt( : , 15);
 pt16=capt( : , 16);
+pt17=capt( : , 17);
+pt18=capt( : , 18);
+pt19=capt( : , 19);
+pt20=capt( : , 20);
+%Set the net center
+xNet = pt20(1);
+yNet = pt20(2);
+
+pt21=capt( : , 21);
+pt22=capt( : , 22);
 
 % Draw the captain and set the return vector of graphics handles.
-captGraphics(1) = drawLine(pt1 , pt2 , "k");
-captGraphics(2) = drawLine(pt2 , pt3 , "k");
-captGraphics(3) = drawLine(pt2 , pt5 , "k");
-captGraphics(4) = drawLine(pt4 , pt5 , "k");
-captGraphics(5) = drawLine(pt5 , pt6 , "k");
-captGraphics(6) = drawLine(pt6 , pt1 , "k");
-captGraphics(7) = drawLine(pt7 , pt8 , "k");
-captGraphics(8) = drawLine(pt8 , pt9 , "k");
-captGraphics(9) = drawLine(pt9 , pt10 , "k");
-captGraphics(10) = drawLine(pt1 , pt11 , "k");
-captGraphics(11) = drawLine(pt6 , pt12 , "k");
-captGraphics(12) = drawLine(pt13 , pt14 , "k");
-captGraphics(13) = drawLine(pt15 , pt16 , "k");
+captGraphics(1) = drawLine(pt1 , pt2);
+captGraphics(2) = drawLine(pt2 , pt3);
+captGraphics(3) = drawLine(pt2 , pt5);
+captGraphics(4) = drawLine(pt4 , pt5);
+captGraphics(5) = drawLine(pt5 , pt6);
+captGraphics(6) = drawLine(pt6 , pt1);
+captGraphics(7) = drawLine(pt7 , pt8);
+captGraphics(8) = drawLine(pt8 , pt9);
+captGraphics(9) = drawLine(pt9 , pt10);
+captGraphics(10) = drawLine(pt1 , pt11);
+captGraphics(11) = drawLine(pt6 , pt12);
+captGraphics(12) = drawLine(pt13 , pt14);
+captGraphics(13) = drawLine(pt13 , pt14);
+captGraphics(14) = drawLine(pt13 , pt15);
+captGraphics(15) = drawLine(pt15 , pt16);
+captGraphics(16) = drawLine(pt16 , pt17);
+captGraphics(17) = drawLine(pt17 , pt18);
+captGraphics(18) = drawLine(pt18 , pt19);
+captGraphics(19) = drawLine(pt19 , pt13);
+captGraphics(20) = drawLine(pt21 , pt22);
+
+for i=1 : length(captGraphics)
+  set (captGraphics(i), "color", [0 0 0]);
+  endfor
+
 endfunction

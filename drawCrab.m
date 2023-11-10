@@ -42,5 +42,9 @@ crabGraphics(8) = drawLine(pt7,pt8,"m");
 crabGraphics(9) = drawLine(pt3,pt9,"m");
 crabGraphics(10) = drawLine(pt9,pt10,"m");
 
+  for i=1 : length(crabGraphics)
+  set (crabGraphics(i), "color", [1 0 1]);
+  endfor
+
 endfunction
 
